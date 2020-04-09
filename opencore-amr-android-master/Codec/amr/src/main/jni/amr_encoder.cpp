@@ -16,16 +16,19 @@ extern "C" {
 JNIEXPORT void JNICALL
 Java_io_kvh_media_amr_AmrEncoder_init(JNIEnv *env, jclass type, jint dtx) {
     state = (encoder_state *) Encoder_Interface_init(dtx);
+    pritnf(" %s"," message from c++ 1 ");
 }
 
 JNIEXPORT void JNICALL
 Java_io_kvh_media_amr_AmrEncoder_reset(JNIEnv *env, jclass type) {
     Encoder_Interface_reset(state);
+    pritnf(" %s"," message from c++ 2 ");
 }
 
 JNIEXPORT void JNICALL
 Java_io_kvh_media_amr_AmrEncoder_exit(JNIEnv *env, jclass type) {
     Encoder_Interface_exit(state);
+    pritnf(" %s"," message from c++ 3 ");
 }
 
 JNIEXPORT jint JNICALL
